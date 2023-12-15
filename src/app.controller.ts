@@ -27,13 +27,13 @@ export class AppController {
 
   @Get('/newCoupon')
   @Render('newCoupon')
-  ujZeneForm() {
+  newCouponForm() {
     return { errors: [] }
   }
 
   @Post('/newCoupon')
   @Render('newCoupon')
-  async ujZene(@Body() newCoupon: newCoupon, @Res() res: Response){
+  async newCoupon(@Body() newCoupon: newCoupon, @Res() res: Response){
       const errors: string[] = [];
       const couponRegex = /[a-zA-Z]{4}-[0-9]{6}/;
       if(newCoupon.title == ''){
